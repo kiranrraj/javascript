@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.page__container{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(56,195,34);
+    background: linear-gradient(0deg, rgba(56,195,34,1) 0%, rgba(253,187,45,1) 100%);
+}
+
+.container{
+    display: flex;
+    width: 100vw;
+    border: 20px solid gray;
+}
+
+.cards{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex:0.5;
+}
+
+.card__data{
+    opacity: 0;
+}
+
+.card{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    width: 140px;
+    border-right: 5px solid #fff;
+    transition: all 0.6s ease;
+}
+
+.card:last-child{
+    border-right: none;
+}
+
+.c1{
+    background-image: url('./images/image_1.jpg');
+}
+.c2{
+    background-image: url('./images/image_2.jpg');
+}
+.c3{
+    background-image: url('./images/image_3.jpg');
+}
+.c4{
+    background-image: url('./images/image_4.jpg');
+}
+.c5{
+    background-image: url('./images/image_5.jpg');
+}
+.c6{
+    background-image: url('./images/image_6.jpg');
+}
+
+.active{
+    width: 100vw;
+}
+
+.active .card__data {
+    opacity: 1;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 30px;
+    padding: 1rem;
+    background-color: #fff;
+}
+
+.active .card__data h3 {
+    margin-top: 0.5rem;
+    font-weight: 350;
+    font-size: 25px;
+    color: grey;
+}
+
+.active .card__data h4 {
+    margin-top: 0.5rem;
+    font-weight: 250;
+    color: goldenrod;
+}
+
+@media only screen and (max-width: 1400px) {
+    .card{
+        width: 100px;
+    }
+
+    .active{
+        width: 100vw;
+    }
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .card{
+        width: 50px;
+    }
+
+    .active{
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .card{
+        width: 30px;
+    }
+
+    .active{
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .card{
+        width: 20px;
+    }
+
+    .active{
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .card{
+        width: 10px;
+    }
+
+    .active{
+        width: 100vw;
+    }
+}
+
+
