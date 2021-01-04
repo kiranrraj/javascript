@@ -61,6 +61,7 @@ a{
     padding: 3rem 6rem 1rem;
     display: flex;
     flex-direction: column;
+    display: none;
 }
 
 .form__close-btn{
@@ -96,12 +97,29 @@ input {
     justify-content: flex-end;
 }
 
-.save{
+.save,
+.reset{
     font-size: 1.1rem;
     background-color: teal;
     border-radius: 10px;
     padding: 0.5rem 1rem;
     margin: 1rem  0.5rem;
+    box-shadow: 0 0 5px 0 black;
+    
+}
+
+.reset{
+    color: #fff;
+    box-shadow: 0 0 5px 0 black;
+    border: 0;
+    outline: none;
+}
+
+.reset:hover,
+.save:hover,
+.reset:active,
+.save:active{
+    box-shadow: none;
 }
 
 
@@ -111,7 +129,7 @@ input {
     border: 2px solid #fff;
     width: 50%;
     padding: 1rem 2rem;
-    opacity: 0;
+    display: none;
 }
 
 .display__qus,
@@ -131,7 +149,7 @@ input {
     font-weight: 300;
     font-size: 1.1rem;
     padding: 0.3rem 1rem 1rem 0;
-    opacity: 0;
+    display: none;
 }
 
 .display__btn{
@@ -176,4 +194,8 @@ i{
 i:hover{
     transform: rotate(360deg);
     color: red;
+}
+
+.toggle-btn{
+    display: block;
 }
