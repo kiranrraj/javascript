@@ -1,0 +1,48 @@
+
+:root{
+    --width:0px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.inner{
+    height: calc(100% + 100px);
+    width: calc(100% + 100px );
+    padding: 50px;
+    background-image: url('./pic_1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    filter: blur(0px); 
+}
+
+.inner__text{
+    font-size: 70px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+.inner__text::after{
+    content: "";
+    position: absolute;
+    width: var(--width);
+    height: 5px;
+    background-color: springgreen;
+    bottom: 0;
+    left: 0;
+}
+
