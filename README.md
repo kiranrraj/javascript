@@ -1,2 +1,2 @@
 # javascript
-JavaScript Basic Programs
+JavaScript projects
