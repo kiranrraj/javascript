@@ -11,14 +11,11 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: rgb(56,195,34);
-    background: linear-gradient(0deg, rgba(56,195,34,1) 0%, rgba(253,187,45,1) 100%);
 }
 
 .container{
     display: flex;
     width: 100vw;
-    border: 20px solid gray;
 }
 
 .cards{
@@ -26,6 +23,7 @@
     width: 100%;
     height: 100%;
     flex:0.5;
+    padding: 10px;
 }
 
 .card__data{
@@ -40,6 +38,9 @@
     width: 140px;
     border-right: 5px solid #fff;
     transition: all 0.6s ease;
+    position: relative;
+    min-width: 40px;
+    position: relative;
 }
 
 .card:last-child{
@@ -65,30 +66,52 @@
     background-image: url('./images/image_6.jpg');
 }
 
+.card__head{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.card__head h3{
+    color: #fff;
+    transform: rotate(-90deg);
+    font-size: 30px;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
 .active{
     width: 100vw;
 }
 
 .active .card__data {
     opacity: 1;
-    font-size: 20px;
+    width: 100%;
     text-align: center;
-    margin-top: 30px;
     padding: 1rem;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 10%;
+    transition: all 0.5s ease;
+}
+.active .card__head{
+    opacity: 0;
 }
 
-.active .card__data h3 {
-    margin-top: 0.5rem;
-    font-weight: 350;
-    font-size: 25px;
-    color: grey;
+.active .card__data h2 {
+    padding: 10px 20px;
+    font-size: 35px;
+    color: orange;
+    transform: rotate(0deg);
 }
 
 .active .card__data h4 {
-    margin-top: 0.5rem;
-    font-weight: 250;
-    color: goldenrod;
+    font-size: 20px;
+    color: #fff;
 }
 
 @media only screen and (max-width: 1400px) {

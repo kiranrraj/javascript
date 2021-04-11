@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: teal;
+}
+
+h1{
+    color: goldenrod;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.card{
+    width: 400px;
+    height: 300px;
+    background-color: purple;
+    margin-bottom: 50px;
+}
+
+a{
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    border: 2px solid white;
+    padding: 5px;
+    color: white;
+}
