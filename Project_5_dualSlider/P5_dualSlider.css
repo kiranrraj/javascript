@@ -29,6 +29,7 @@
     height: 100vh;
     background-color: tomato;
     transition: all 0.4s ease;
+    
 }
 .slider__right{
     position: absolute;
@@ -49,6 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-left: 20px;
 }
 
 .right__slide{
