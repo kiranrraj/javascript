@@ -6,7 +6,6 @@ items.forEach((item)=>{
     item.addEventListener('click', ()=>{
         const id = item.dataset.id;
         page = document.querySelector(`#${id}`);
-        // console.log(id, page);
         removeClass(blocks);
         page.classList.add('show')
     })
@@ -17,8 +16,4 @@ function removeClass(list){
         elem.classList.remove('show');
     })
 }
-
-// blocks.forEach((block)=>{
-//     console.log(block.id)
-// })
 

@@ -1,0 +1,180 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Playfair Display', serif;
+}
+
+ul{
+    list-style: none;
+}
+
+h1,h2,h3,h4,h5{
+    font-weight: 400;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: thistle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    width: 400px;
+    height: 650px;
+    margin: auto;
+    background-color: steelblue;
+    padding: 15px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.heading{
+    margin: 10px 0 15px;
+    text-align: center;
+    color: #fff;
+}
+
+.main{
+    height: 85%;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main__balance, 
+.main__trans,
+.main__hisory,
+.history__head,
+.select__cont
+{
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main__balance{
+    border-left: 10px solid green;
+    padding: 10px 5px;
+    background-color: #111;
+    box-shadow: 0 0 10px 1px #111;
+}
+
+.income_cont, 
+.expense_cont, 
+.main__history,
+.main__add{
+    padding: 10px 5px;
+    background-color: #111;
+    box-shadow: 0 0 10px 1px #111;
+}
+
+.income_cont{
+    border-left: 10px solid green;
+}
+
+.expense_cont{
+    border-right: 10px solid red;
+}
+
+.income_cont span:nth-child(1), 
+.expense_cont span:nth-child(1) {
+    padding-right: 20px;
+}
+
+.main__history {
+    border-left: 10px solid green;
+    padding: 20px 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all 1s ease-in;
+}
+
+.history__list{
+    transition: all 1s ease-in;
+    /* opacity: 0; */
+}
+
+.history__head{
+    padding-bottom: 10px;
+}
+
+.history__list li {
+    color: #111;
+    padding: 2px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history__list li:nth-child(n){
+    background-color: #eee;
+}
+
+.history__list li:nth-child(2n){
+    background-color: #ccc;
+}
+
+.main__history label {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    cursor: pointer;
+    display: block;
+}
+
+.main__history i:hover {
+    color: tomato;
+}
+
+#show:checked + .history__list{
+    visibility:visible
+}
+
+#show{
+    display: none;
+}
+
+.main__add{
+    border-left: 10px solid green;
+    padding: 5px 10px 15px;
+}
+
+.add__head{
+    margin: 10px 20px 20px;
+    text-align: center;
+}
+
+.add__form{
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+#amtTrans{
+    margin-bottom: 20px;
+}
+
+.select__cont{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.btn{
+    width: 20%;
+    margin: 0 auto;
+    padding: 4px 8px;
+}

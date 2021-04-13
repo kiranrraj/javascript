@@ -11,8 +11,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(99, 195, 34);
-    background: linear-gradient(49deg, rgba(99, 195, 34, 1) 0%, rgba(45, 253, 237, 1) 100%);
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .full_content {
@@ -35,6 +37,47 @@
     left: 0;
     border-radius: 2px;
     opacity: 0;
+}
+
+.block_container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 30px;
+    color: #fff;
+    overflow: hidden;
+}
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 1, 1, 0.4);
+}
+
+.block_container h1 {
+    z-index: 100;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #111;
+    position: absolute;
+    top: 50px;
+    font-size: 40px;
+    transform: translate(-1000px);
+}
+
+.block_container h4{
+    position: absolute;
+    top: 150px;
+    z-index: 100;
+    padding: 0 20px;
+    text-shadow: 0 0 5px #111;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 1.5px;
+    transform: translate(1000px);
 }
 
 #Home {
@@ -98,6 +141,11 @@ nav {
 
 .show {
     opacity: 1;
+}
+
+.show h1, .show h4{
+    transition: all 0.8s ease;
+    transform: translate(0px);
 }
 
 
