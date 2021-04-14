@@ -137,9 +137,9 @@ h1,h2,h3,h4,h5{
     color: tomato;
 }
 
-#show:checked + .history__list{
-    visibility:visible
-}
+/* #show:checked + .history__list{
+    transition: all 0.5s ease;
+} */
 
 #show{
     display: none;
@@ -162,6 +162,7 @@ h1,h2,h3,h4,h5{
 
 input {
     margin-bottom: 10px;
+    outline: none;
 }
 
 #amtTrans{

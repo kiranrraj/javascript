@@ -19,16 +19,16 @@
             <div class="main">
                 <div class="main__balance">
                     <span>Your Balance</span>
-                    <span>200 $</span>
+                    <span id="balAmt"></span>
                 </div>
                 <div class="main__trans">
                     <div class="income_cont">
                         <span>Income</span>
-                        <span>2000$</span>
+                        <span id="inAmt"></span>
                     </div>
                     <div class="expense_cont">
                         <span>Expense</span>
-                        <span>1000$</span>
+                        <span id="exAmt"></span>
                     </div>
                 </div>
                 <div class="main__history">
@@ -38,13 +38,8 @@
                     <label for="show">
                         <i class="fas fa-chevron-circle-down"></i>
                     </label>
-                    <input type="checkbox" name="" id="show">
+                    <input type="checkbox" name="" id="show" checked>
                     <ul class="history__list">
-                        <li><span>Text</span><span>200$</span></li>
-                        <li><span>Text</span><span>200$</span></li>
-                        <li><span>Text</span><span>200$</span></li>
-                        <li><span>Text</span><span>200$</span></li>
-                        <li><span>Text</span><span>200$</span></li>
                     </ul>
                 </div>
                 <div class="main__add">
@@ -57,11 +52,14 @@
                                 <option value="income">Income</option>
                             </select>
                         </div>
-                        <input type="text" name="" id="nameTrans">
-                        <input type="text" name="" id="amtTrans">
+                        <input type="text" name="" id="nameTrans" placeholder="Transaction Name">
+                        <input type="text" name="" id="amtTrans" placeholder="Transaction Amount">
                         <button class="btn">Add</button>
                     </div>
                 </div>
+            </div>
+            <div class="msg">
+                <p class="msgPara"></p>
             </div>
         </div>
     </div>
