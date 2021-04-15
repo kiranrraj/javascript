@@ -101,32 +101,3 @@ function getLocalSValues(lsName){
     let arr1 = JSON.parse(localStorage.getItem(lsName));
     return arr1
 }
-
-// lastTransactions(transactionName, "kunnil", "localStorageTname");
-// lastTransactions(transactionName, "dhanya", "localStorageTname");
-// lastTransactions(transactionName, "samirdhi", "localStorageTname");
-// lastTransactions(transactionName, "ration shop", "localStorageTname");
-// lastTransactions(transactionName, "vegetables", "localStorageTname");
-// lastTransactions(transactionName, "loan", "localStorageTname");
-// lastTransactions(transactionName, "credit card", "localStorageTname");
-// lastTransactions(transactionName, "kunnil", "localStorageTname");
-// lastTransactions(transactionName, "dhanya", "localStorageTname");
-
-// lastTransactions(transactionAmt, 100 ,"localStorageTamt");
-// lastTransactions(transactionAmt, 200, "localStorageTamt");
-// lastTransactions(transactionAmt, 300, "localStorageTamt");
-// lastTransactions(transactionAmt, 400, "localStorageTamt");
-// lastTransactions(transactionAmt, 500, "localStorageTamt");
-// lastTransactions(transactionAmt, 600,"localStorageTamt");
-// lastTransactions(transactionAmt, 700, "localStorageTamt");
-// lastTransactions(transactionAmt, 800, "localStorageTamt");
-// lastTransactions(transactionAmt, 900, "localStorageTamt");
-
-// function storeFiveVal(){
-//     let name = [];
-//     let count = 0
-
-//     if count < 0 {
-//         name[]
-//     }
-// }
