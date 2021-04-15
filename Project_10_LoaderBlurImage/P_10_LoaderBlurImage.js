@@ -15,7 +15,6 @@ function blurring(){
     if(load > 99){
         clearInterval(interval);
     }
-
     text_1.innerText = `${load}%`;
     text_1.style.opacity = scale(load, 0, 100, 1, 0);
     inner_div.style.filter=`blur(${scale(load, 0, 100, 30, 0)}px)`;
