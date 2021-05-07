@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Down Timer</title>
+    <link rel="stylesheet" href="./P_15_countDown.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">Count Down Timer</div>
+        <div class="content">
+            <div class="block1">
+                <div class="input">
+                    <div class="input_ctn">
+                        <label for="minutes">Minutes</label>
+                        <input type="number" name="minutes" id="minutes" 
+                        min="0" max="59"  placeholder="00">
+                    </div>
+                    <div class="input_ctn">
+                        <label for="seconds">Seconds</label>
+                        <input type="number" name="seconds" id="seconds" 
+                        min="0" max="59" placeholder="00">
+                    </div>
+                </div>
+                <div class="btn_ctn">
+                    <button class="btn start">Start</button>
+                    <button class="btn reset">Reset</button>
+                </div>
+            </div>
+            <div class="time">
+                <span class="disp_minutes">00</span>
+                <span>:</span>
+                <span class="disp_seconds">00</span>
+            </div>
+        </div>
+    </div>
+    <script src="./P_15_countDown.js"></script>
+</body>
+
+</html>
