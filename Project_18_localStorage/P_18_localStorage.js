@@ -5,6 +5,7 @@ const idb = (function () {
     let printbtn = document.querySelector('.print');
     let updatebtn = document.querySelector('.update');
     let deletebtn = document.querySelector('.delete');
+    let searchbtn = document.querySelector('.search');
 
     function getValue() {
         // Get data from input fields
@@ -24,6 +25,18 @@ const idb = (function () {
         return studentObj;
     }
 
+    function createTransaction(store,mode){
+        let db_tx = db.transaction(store, mode);
+        db_tx.addEventListener('complete', (ev) => {
+            console.log("Transaction created");
+        });
+
+        db_tx.addEventListener('error', (err) => {
+            console.log("Error while creating transaction", err);
+        })
+        return db_tx;
+    }
+
 
     let dbOpenReq = indexedDB.open('studentDB', 1);
 
@@ -38,9 +51,16 @@ const idb = (function () {
 
     dbOpenReq.addEventListener('upgradeneeded', (ev) => {
         db = ev.target.result;
-        if (!db.objectStoreNames.contains('studentStore2021')) {
-            db.createObjectStore('studentStore2021', { keyPath: "id" });
+        if (db.objectStoreNames.contains('studentStore2021')) {
+            db.deleteObjectStore('studentStore2021');
+            objectStore = db.createObjectStore('studentStore2021', { keyPath: "id" });
+        } else{
+            
+        objectStore = db.createObjectStore('studentStore2021', { keyPath: "id" });
         }
+        
+        objectStore.createIndex('nameIndex', 'name', {unique:false});
+        objectStore.createIndex('locationIndex', 'place', {unique:false});
         console.log("Upgrade", db);
     });
 
@@ -49,17 +69,11 @@ const idb = (function () {
     submitbtn.addEventListener("click", (ev) => {
         ev.preventDefault();
 
+        // Get value from form
         let stdObj = getValue();
 
         // create Transaction
-        let tx = db.transaction('studentStore2021', 'readwrite');
-        tx.oncomplete = (ev) => {
-            console.log(ev);
-        }
-
-        tx.onerror = (err) => {
-            console.log(err)
-        }
+        let tx = createTransaction('studentStore2021', 'readwrite');
 
         let store = tx.objectStore('studentStore2021');
         let request = store.add(stdObj);
@@ -74,12 +88,11 @@ const idb = (function () {
 
     })
 
-    // List the data from the database
-    printbtn.addEventListener("click", (ev) => {
-        let tx = db.transaction('studentStore2021', 'readonly');
-        tx.oncomplete = (ev) => {
 
-        }
+    // List the data from the database
+        printbtn.addEventListener("click", (ev) => {
+        // create Transaction
+        let tx = createTransaction('studentStore2021', 'readonly');
 
         let store = tx.objectStore('studentStore2021');
         let req = store.getAll();
@@ -97,6 +110,28 @@ const idb = (function () {
         })
     });
 
+    // Search database
+
+    searchbtn.addEventListener('click', (ev)=>{
+        let {id} = getValue();
+        if(id){
+            let tx = createTransaction('studentStore2021', 'readonly');
+            let store = tx.objectStore('studentStore2021');
+            let req = store.get(id);
+            req.addEventListener('success', (ev) => {
+                console.log(ev.target)
+                let request = ev.target;
+                let out = request.result;
+                console.log(`Printing Details of ${id}`);
+                console.table(out);
+            });
+    
+            req.addEventListener('error', (err) => {
+                console.log("Error Occured while searching", err);
+            })
+        }
+    })
+
     // Update database
     updatebtn.addEventListener("click", (ev) => {
         ev.preventDefault()
@@ -106,14 +141,7 @@ const idb = (function () {
 
         if (id) {
             // create Transaction
-            let tx = db.transaction('studentStore2021', 'readwrite');
-            tx.oncomplete = (ev) => {
-                console.log(ev);
-            }
-
-            tx.onerror = (err) => {
-                console.log(err)
-            }
+            let tx = createTransaction('studentStore2021', 'readwrite');
 
             let store = tx.objectStore('studentStore2021');
             let request = store.put(stdObj);
@@ -138,14 +166,7 @@ const idb = (function () {
 
         if (id) {
             // create Transaction
-            let tx = db.transaction('studentStore2021', 'readwrite');
-            tx.oncomplete = (ev) => {
-                console.log(ev);
-            }
-
-            tx.onerror = (err) => {
-                console.log(err)
-            }
+            let tx = createTransaction('studentStore2021', 'readwrite');
 
             let store = tx.objectStore('studentStore2021');
             let request = store.delete(id);
