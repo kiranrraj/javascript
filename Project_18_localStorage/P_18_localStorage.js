@@ -95,7 +95,9 @@ const idb = (function () {
         let tx = createTransaction('studentStore2021', 'readonly');
 
         let store = tx.objectStore('studentStore2021');
-        let req = store.getAll();
+        //let req = store.getAll();    //To get all document in the db in the default order. 
+        let idx = store.index('nameIndex');
+        let req = idx.getAll();
 
         req.addEventListener('success', (ev) => {
             console.log(ev.target)
