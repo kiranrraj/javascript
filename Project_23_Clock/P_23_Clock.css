@@ -1,0 +1,199 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Newsreader', serif;
+    font-size: 62.5%;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(circle at center right, rgb(118, 205, 206) 0%,
+            rgb(118, 205, 206) 5%, rgb(107, 195, 211) 5%, rgb(107, 195, 211) 10%,
+            rgb(96, 184, 215) 10%, rgb(96, 184, 215) 15%, rgb(85, 174, 220) 15%,
+            rgb(85, 174, 220) 20%, rgb(74, 164, 225) 20%, rgb(74, 164, 225) 25%,
+            rgb(63, 154, 230) 25%, rgb(63, 154, 230) 30%, rgb(52, 143, 234) 30%,
+            rgb(52, 143, 234) 35%, rgb(41, 133, 239) 35%, rgb(41, 133, 239) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock_block {
+    width: 60rem;
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: radial-gradient(circle at top left, rgb(36, 82, 165) 0%,
+            rgb(36, 82, 165) 5%, rgb(47, 100, 177) 5%, rgb(47, 100, 177) 10%, rgb(57, 117, 190) 10%,
+            rgb(57, 117, 190) 15%, rgb(68, 135, 202) 15%, rgb(68, 135, 202) 20%, rgb(79, 152, 215) 20%,
+            rgb(79, 152, 215) 25%, rgb(90, 170, 227) 25%, rgb(90, 170, 227) 30%, rgb(100, 187, 240) 30%,
+            rgb(100, 187, 240) 35%, rgb(111, 205, 252) 35%, rgb(111, 205, 252) 100%);
+}
+
+.heading {
+    height: 10rem;
+    width: 100%;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.heading h2 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgb(36, 82, 165);
+}
+
+.btn1_container,
+.btn2_container {
+    width: 6rem;
+    height: 1.8rem;
+    border-color: #fff;
+    background-color: #fff;
+    display: flex;
+    position: relative;
+    border: 1px solid #fff;
+    border-radius: 5rem;
+}
+
+/* Button */
+i {
+    color: #111;
+    font-size: 1.2rem;
+    padding: 2px;
+    transition: all 300ms ease;
+}
+
+.active1 {
+    transform: translateX(4rem) rotate(350deg);
+    color: #fff;
+}
+
+.changeBg {
+    background-color: #111;
+    border-color: #111;
+}
+
+/* Button */
+
+.left,
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 15rem;
+    color: #111;
+}
+
+.right {
+    align-items: flex-end;
+}
+
+.left p,
+.right p {
+    font-size: 1.4rem;
+    margin-bottom: 2px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.time_block {
+    width: 100%;
+    height: 20rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.block {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.dropSection {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    height: 40px;
+    box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+    background-color: #3d94f6;
+    border-radius: .6rem;
+    border: 1px solid #337fed;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 6px 24px;
+    text-shadow: 0px 1px 0px #1570cd;
+    margin-right: 20px;
+}
+
+.btn:hover {
+    background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+    background-color: #1e62d0;
+}
+
+.btn:active {
+    position: relative;
+    top: 1px;
+}
+
+.timezone_ctn {
+    height: 40px;
+    display: flex;
+    flex-direction: column-reverse;
+    font-size: 1.4rem;
+    align-items: center;
+}
+
+label {
+    margin-top: 5px;
+}
+
+/* dark mode */
+
+.darkMode {
+    background:linear-gradient(17deg, rgba(41, 41, 41, 0.02) 0%,
+        rgba(41, 41, 41, 0.02) 48%, rgba(10, 10, 10, 0.02) 48%,
+        rgba(10, 10, 10, 0.02) 59%, rgba(164, 164, 164, 0.02) 59%,
+        rgba(164, 164, 164, 0.02) 73%, rgba(79, 79, 79, 0.02) 73%,
+        rgba(79, 79, 79, 0.02) 93%, rgba(42, 42, 42, 0.02) 93%,
+        rgba(42, 42, 42, 0.02) 100%),
+    linear-gradient(42deg,
+        rgba(124, 124, 124, 0.02) 0%, rgba(124, 124, 124, 0.02) 15%,
+        rgba(116, 116, 116, 0.02) 15%, rgba(116, 116, 116, 0.02) 23%,
+        rgba(41, 41, 41, 0.02) 23%, rgba(41, 41, 41, 0.02) 44%,
+        rgba(196, 196, 196, 0.02) 44%, rgba(196, 196, 196, 0.02) 54%,
+        rgba(145, 145, 145, 0.02) 54%, rgba(145, 145, 145, 0.02) 100%),
+    linear-gradient(151deg, rgba(85, 85, 85, 0.02) 0%, rgba(85, 85, 85, 0.02) 12%,
+        rgba(72, 72, 72, 0.02) 12%, rgba(72, 72, 72, 0.02) 28%, rgba(156, 156, 156, 0.02) 28%,
+        rgba(156, 156, 156, 0.02) 33%, rgba(230, 230, 230, 0.02) 33%, rgba(230, 230, 230, 0.02) 50%,
+        rgba(13, 13, 13, 0.02) 50%, rgba(13, 13, 13, 0.02) 100%),
+    linear-gradient(76deg,
+        rgba(25, 25, 25, 0.02) 0%, rgba(25, 25, 25, 0.02) 9%, rgba(183, 183, 183, 0.02) 9%,
+        rgba(183, 183, 183, 0.02) 32%, rgba(19, 19, 19, 0.02) 32%, rgba(19, 19, 19, 0.02) 86%,
+        rgba(129, 129, 129, 0.02) 86%, rgba(129, 129, 129, 0.02) 88%, rgba(174, 174, 174, 0.02) 88%,
+        rgba(174, 174, 174, 0.02) 100%),
+    linear-gradient(90deg, rgb(41, 41, 41), rgb(8, 8, 8));
+    color: #fff;
+}

@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stop Watch</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./P_16_stopWatch.css">
 </head>
 <body>
     <div class="container">
         <h1>Stop Watch</h1>
         <div class="content">
-            <div class="btn_ctn">
+            <div class="main_ctn">
                 <p class="time">
                     <span class="minute">00</span>
                     <span class="colon">:</span>
@@ -19,9 +21,11 @@
                     <span class="colon">:</span>
                     <span class="milli">00</span>
                 </p>
-                <button class="start btn">Start</button>
-                <button class="btn stop">Stop</button>
-                <button class="btn reset">Pause</button>
+                <div class="btn_ctn">
+                    <button class="start btn">Start</button>
+                    <button class="btn stop">Stop</button>
+                    <button class="btn reset">Pause</button>
+                </div>
             </div>
             <ul class="lap"></ul>
         </div>

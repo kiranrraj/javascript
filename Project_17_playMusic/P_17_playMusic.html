@@ -5,12 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play Music</title>
+    <link rel="stylesheet" href="./P_17_playMusic.css">
 </head>
 <body>
     <div class="container">
+        <h2>Play Drum Kit</h2>
         <div class="content">
-            
+            <div class="key" data-keypress="a">A</div>
+            <div class="key" data-keypress="s">S</div>
+            <div class="key" data-keypress="d">D</div>
+            <div class="key" data-keypress="f">F</div>
+            <div class="key" data-keypress="g">G</div>
+            <div class="key" data-keypress="h">H</div>
+            <div class="key" data-keypress="j">J</div>
+            <div class="key" data-keypress="k">K</div>
         </div>
+        <h4>Press the keys in the keyboard to play the sounds</h4>
+        <audio src="./music/Clap2.wav" data-keypress="a"></audio>
+        <audio src="./music/Crash_4.wav" data-keypress="s"></audio>
+        <audio src="./music/Hihat_4_closed.wav" data-keypress="d"></audio>
+        <audio src="./music/Hihat_open_2.wav" data-keypress="f"></audio>
+        <audio src="./music/Kick_3.wav" data-keypress="g"></audio>
+        <audio src="./music/Perc3.wav" data-keypress="h"></audio>
+        <audio src="./music/Rev_5.wav" data-keypress="j"></audio>
+        <audio src="./music/SyhTom01.wav" data-keypress="k"></audio>
     </div>
+    <script src="./P_17_playMusic.js"></script>
 </body>
 </html>
