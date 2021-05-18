@@ -110,20 +110,67 @@ i {
 .time_block {
     width: 100%;
     height: 20rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    perspective: 200rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
-.block {
+.card {
     width: 100%;
-    height: 100px;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.back_side.section1{
+    opacity: 0;
+}
+
+.side{
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    display: flex;
+}
+
+.front_side {
+    background: #1570cd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display:flex;
+}
+
+.section1 {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
+    text-shadow: -1px 2px 20px #111;
+    font-size: 4rem;
 }
+
+  
+.back_side{
+    transform: rotateY( 180deg );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    background: #1570cd;
+}
+
+.flip_side{
+    transform: rotateY(180deg);
+}
+
 
 .dropSection {
     width: 100%;
@@ -197,3 +244,98 @@ label {
     linear-gradient(90deg, rgb(41, 41, 41), rgb(8, 8, 8));
     color: #fff;
 }
+
+/* Analogue clock style */
+.clock{
+    height: 200px;
+    width: 200px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+}
+
+.clockFace{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background-color: rgb(20, 120, 203);
+}
+
+.digit{
+    position: absolute;
+    padding: 15px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.one{
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.three{
+    bottom:0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.four{
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+}
+
+.two{
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+}
+
+.dot{
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+
+.hands{
+    position: absolute;
+}
+
+.hour{
+    width: 45px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    transform-origin: left center;
+    transform: rotate(270deg);
+}
+
+.minute{
+    width: 50px;
+    height: 2px;
+    background-color: orange;
+    position: absolute;
+    transform-origin: left center;
+    transform: rotate(270deg);
+}
+
+.second{
+    width: 60px;
+    height: 1px;
+    background-color: red;
+    position: absolute;
+    transform-origin: left center;
+    transform: rotate(270deg);
+}
+/* Analogue clock style */
