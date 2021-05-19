@@ -7,6 +7,7 @@ const front_side = document.querySelector(".front_side");
 const block = document.querySelector(".clock_block");
 const btn = document.querySelector(".btn");
 const timezone = document.querySelector("#timezone");
+const timezones = document.querySelector("#timezones");
 let count = 1;
 createDiv(0);
 
@@ -53,7 +54,7 @@ setInterval(() => {
 
 
 btn.addEventListener('click', ()=>{
-
+  console.log(timezone);
   if(timezone.value){
 
     let local_offset = new Date().getTimezoneOffset() * 60;
@@ -81,8 +82,18 @@ btn.addEventListener('click', ()=>{
 
 function createDiv(current_offset){
 
-  const timeElem = document.createElement('div')
+  const timeElem = document.createElement('div');
+  const timeSpan = document.createElement('span');
+  timeSpan.textContent = timezones.selectedOptions;
+  // Array.from(timezones.options).forEach((elem)=>{
+  //   if(elem.selected){
+  //     console.log(elem);
+  //   }
+  // })
+  console.log(timezones.options.se)
+  timeElem.appendChild(timeSpan);
   timeElem.className = `section1 s${count}`;
+  
   timeElem.textContent = update(current_offset);
   timeElem.style.backgroundColor = `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
 
