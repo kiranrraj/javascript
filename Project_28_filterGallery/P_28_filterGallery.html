@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./P_28_filterGallery.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Gallery Filter Example</h2>
+        <div class="btn_ctn">
+            <button class="btn active" data-type="All">All</button>
+            <button class="btn" data-type="salad">Salad</button>
+            <button class="btn" data-type="cake">Cake</button>
+            <button class="btn" data-type="burger">Burger</button>
+            <button class="btn" data-type="mix">Mix</button>
+        </div>
+        <div class="gallery">
+            <div class="img salad"></div>
+            <div class="img salad"></div>
+            <div class="img cake"></div>
+            <div class="img cake"></div>
+            <div class="img cake"></div>
+            <div class="img cake"></div>
+            <div class="img salad"></div>
+            <div class="img salad"></div>
+            <div class="img burger"></div>
+            <div class="img burger"></div>
+            <div class="img mix"></div>
+            <div class="img mix"></div>
+        </div>
+    </div>
+    <script>
+        const buttons = document.querySelectorAll('.btn');
+        const images = document.querySelectorAll('.img');
+        addClass('img');
+
+        buttons.forEach(elem => {
+            elem.addEventListener('click', (e) => {
+                removeActive();
+                e.target.classList.add('active');
+                if (elem.dataset.type == 'All') {
+                    addClass('img');
+                }
+
+                if (elem.dataset.type == 'salad') {
+                    removeClass();
+                    addClass('salad');
+                }
+                if (elem.dataset.type == 'cake') {
+                    removeClass();
+                    addClass('cake');
+                }
+                if (elem.dataset.type == 'burger') {
+                    removeClass();
+                    addClass('burger');
+                }
+                if (elem.dataset.type == 'mix') {
+                    removeClass();
+                    addClass('mix');
+                 }
+
+            })
+        })
+
+        function addClass(cls) {
+            images.forEach(img => {
+                if(img.classList.contains(cls)){
+                    img.classList.add('show');
+                }
+            })
+        }
+
+        function removeClass() {
+            images.forEach(img => {
+                img.classList.remove('show');
+            })
+        }
+
+        function removeActive(){
+            buttons.forEach(elem =>{
+                elem.classList.remove('active');
+            })
+        }
+    </script>
+</body>
+
+</html>
