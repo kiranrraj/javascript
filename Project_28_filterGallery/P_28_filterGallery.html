@@ -37,41 +37,19 @@
     <script>
         const buttons = document.querySelectorAll('.btn');
         const images = document.querySelectorAll('.img');
-        addClass('img');
+        addShow('All');
 
         buttons.forEach(elem => {
             elem.addEventListener('click', (e) => {
                 removeActive();
                 e.target.classList.add('active');
-                if (elem.dataset.type == 'All') {
-                    addClass('img');
-                }
-
-                if (elem.dataset.type == 'salad') {
-                    removeClass();
-                    addClass('salad');
-                }
-                if (elem.dataset.type == 'cake') {
-                    removeClass();
-                    addClass('cake');
-                }
-                if (elem.dataset.type == 'burger') {
-                    removeClass();
-                    addClass('burger');
-                }
-                if (elem.dataset.type == 'mix') {
-                    removeClass();
-                    addClass('mix');
-                 }
-
+                addShow(e.target.dataset.type);
             })
-        })
+        });
 
-        function addClass(cls) {
-            images.forEach(img => {
-                if(img.classList.contains(cls)){
-                    img.classList.add('show');
-                }
+        function removeActive(){
+            buttons.forEach(elem =>{
+                elem.classList.remove('active');
             })
         }
 
@@ -81,11 +59,18 @@
             })
         }
 
-        function removeActive(){
-            buttons.forEach(elem =>{
-                elem.classList.remove('active');
+        function addShow(cls){
+            removeClass();
+            images.forEach(elem => {
+                if(elem.classList.contains(cls)) {
+                    console.log(elem.classList.contains(cls));
+                     elem.classList.add('show');
+                } else if(cls == "All"){
+                    elem.classList.add('show');
+                }
             })
         }
+
     </script>
 </body>
 
