@@ -1,0 +1,99 @@
+*, 
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width:100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f89b29;
+    overflow: hidden;
+}
+
+.progressBar--wrapper{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.progressBar--bar{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #00ff87;
+    border-radius: 50%;
+}
+
+.progressBar--bar::before,
+.progressBar--bar::after{
+    width: 50%;
+    height: 100%;
+    background: transparent;
+    content:"";
+    position: absolute;
+    background: #fff;
+    top:0px;
+}
+
+.progressBar--bar::before{
+    left:0px;
+    border-top-left-radius: 300px;
+    border-bottom-left-radius: 300px;
+    border-right: transparent;
+    transform-origin: right center;
+} 
+
+.progressBar--bar::after{
+    right:0px;
+    z-index: 10;
+    border-left: transparent;
+    border-top-right-radius: 300px;
+    border-bottom-right-radius: 300px;
+    transform-origin: left center;
+} 
+
+
+.progressBar--wrapper:hover .progressBar--bar::before{
+    animation: animate1 3s linear forwards;
+}
+
+.progressBar--wrapper:hover .progressBar--bar::after{
+    animation: animate2 1.5s 1.5s linear forwards;
+}
+
+@keyframes animate1 {
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate2 {
+    0%, 100% {
+        transform: rotate(180deg);
+        background: #00ff87;
+    }
+}
+
+.center{
+    position: absolute;
+    background: #f89b29;
+    width: 280px;
+    height: 280px;
+    border-radius: 100%;
+    z-index: 10;
+}
