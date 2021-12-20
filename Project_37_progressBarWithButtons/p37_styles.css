@@ -1,0 +1,75 @@
+*, 
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --value: 0px;
+    --color: #00ff87;
+}
+
+.container{
+    width:100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, hsla(333, 100%, 53%, 1) 0%, hsla(33, 94%, 57%, 1) 100%);
+    overflow: hidden;
+}
+
+.wrapper{
+    width: 600px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.progressBar{
+    width: 600px;
+    height: 5px;
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 5px -1px #444;
+}
+
+.progressBar::before{
+    content: "";
+    height: 100%;
+    width: var(--value);
+    background-color: var(--color);
+    position: absolute;
+    top: 0px;
+    left:0px;
+    box-shadow: 2px 2px 5px -1px #444;
+    transition: width 500ms ease;
+}
+
+.btn{
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    z-index: 5;
+    box-shadow: 4px 4px 5px -1px #444;
+}
+
+.btn:hover{
+    background:var(--color);
+    box-shadow: 2px 2px 2px -1px #444;
+}
+
+.active.btn{
+    background: var(--color);
+}

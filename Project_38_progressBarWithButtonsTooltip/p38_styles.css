@@ -1,0 +1,112 @@
+*, 
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --value: 0px;
+    --color: #00ff87;
+    --tooltip-left: 0px;
+}
+
+.container{
+    width:100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, hsla(333, 100%, 53%, 1) 0%, hsla(33, 94%, 57%, 1) 100%);
+    overflow: hidden;
+}
+
+.wrapper{
+    width: 600px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.progressBar{
+    width: 600px;
+    height: 5px;
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 5px -1px #444;
+}
+
+.tooltip{
+    width: 100px;
+    height: 60px;
+    position: absolute;
+    text-align: center;
+    line-height: 60px;
+    background: #fff;
+    border-radius: 20px;
+    top: -100px;
+    left: var(--tooltip-left);
+    color: #000;
+    font-size: 20px;
+    text-shadow: 2px 2px 2px #777;
+    box-shadow: 2px 2px 5px -1px #333;
+    display: none;
+}
+
+.tooltip::before{
+    content:"";
+    position:absolute;
+    border: 10px solid #fff;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: #fff transparent  transparent transparent;
+}
+
+.btn:hover ~ .tooltip{
+    display:block;
+}
+
+.progressBar::before{
+    content: "";
+    height: 100%;
+    width: var(--value);
+    background-color: var(--color);
+    position: absolute;
+    top: 0px;
+    left:0px;
+    box-shadow: 2px 2px 5px -1px #444;
+    transition: width 500ms ease;
+}
+
+.btn{
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 5px -1px #444;
+    text-shadow: 3px 3px 3px #aaa;
+}
+
+.btn:hover{
+    background:var(--color);
+    box-shadow: 2px 2px 2px -1px #444;
+}
+
+.active.btn{
+    background: var(--color);
+}
