@@ -1,0 +1,36 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.container{
+    padding: 50px 100px;
+    min-height: 100vh;
+    width: 100%;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    position: relative;
+}
+
+.btnCollection{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+    position: fixed;
+    top: 200px;
+    left: 20px;
+}
+
+.btn{
+    width: 60px;
+    margin:10px;
+    padding: 10px;
+    box-shadow: 2px 2px 1px #333;
+}
+
+.btn:hover{
+    box-shadow: 1px 1px 1px #333;
+}

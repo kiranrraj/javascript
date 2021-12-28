@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./p39_style.css">
+    <title>Copy Paste</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text">
+            Focus indicators can also be animated. Background colors, borders, box shadows, and outlines can all be animated using CSS transitions and animations. The outline-width and outline-offset properties take numerical values that can be animated. So you can apply a subtle transition to your focus indicators to make them pop. Just make sure to wrap any transitions or animations in a prefers-reduced-motion user query, so users have the option to opt out of the animations if they want to. When you’re designing and working with a color palette, you can find a color that has enough contrast with the other colors in your palette and use it to style your focus indicators. If there is no one color that meets that criterion, you can add one, or design focus styles that work for different elements and the contexts in which they appear. You can use a color contrast tool like Stark to quickly check the contrast of two colors without interrupting your workflow — whether you’re designing in a design tool like Figma or in the browser. You can also use the browser devtools to check color contrast where they are available, or an online tool like WebAIM’s color contrast checker, which I used to calculate the color contrasts throughout this article. Not all elements need to have the same focus style. I personally try to keep focus indicators visually consistent as much as possible. But there are times when some elements could benefit from a different focus style, whether for aesthetic or usability purposes—or maybe even both! Get creative, but do so within the boundaries of accessibility. Creating nice focus indicators is a nice touch that not only shows your attention to detail, but it also shows that you care about all of your user’s experiences enough to spend a bit of time fine-tuning these details. If you’re a designer, make a habit to design and include focus indicator styles in your design specs if you don’t already do so. If you’re a developer, include focus styles in your CSS defaults. If you’re working with designers, strike up a discussion about focus styles with them if they don’t already prioritize them in design specs. Sometimes, you don’t need permission, extra time, or extra budget to improve theaccessibility and usability of your product. Focus indicators are one small yet critical addition to your product that has tremendous usability benefits. Spending a few extra minutes designing and adding them will pay dividends and improve your product for millions of people who will use it.
+        </div>
+        <div class="btnCollection">
+            <button class="btn btn1">Copy</button>
+            <button class="btn btn2">Select All</button>
+            <button class="btn btn3">Clear</button>
+        </div>
+    </div>
+    <script src="./p39_main.js"></script>
+</body>
+
+</html>
