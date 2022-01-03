@@ -1,0 +1,105 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Playfair Display', serif;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: #ffc845;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pwGen--wrapper{
+    width: 400px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffc845;
+    background: #1b365d;
+    border-radius: 5px;
+    border: 5px solid #ffc845;
+    box-shadow: 3px 3px 10px 1px #000;
+    padding: 20px 20px 40px;
+
+}
+
+.pwGen--heading{
+    padding: 20px 0px;
+}
+
+.heading--h2{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.pwGen--display{
+    padding: 10px 0px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    width: 100%;
+}
+
+.display--out{
+    color: #003b49;
+    background: #FFFFFF;
+    height: 30px;
+    width: 250px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    padding: 2px 5px;
+}
+
+.display--copy{
+    padding: 5px 15px;
+}
+
+.pwGen--conditions{
+    width: 100%;
+}
+
+.conditions--wrapper{
+    display: flex;
+    padding: 2px 0px;
+    justify-content: space-between;
+    align-items:center;
+}
+
+#length{
+    outline: none;
+    width: 65px;
+    padding: 5px;
+}
+
+.pwGen--btn{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 15px;
+}
+
+.btn--generate{
+    padding: 5px 25px;
+}
+
+.msg{
+    position: absolute;
+    right: 0px;
+    bottom: -30px;
+    font-size: 15px;;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./p42_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pwGen--wrapper">
+            <div class="pwGen--heading">
+                <h2 class="heading--h2">Password Generator</h2>
+            </div>
+            <div class="pwGen--display">
+                <input type="text" name="display" value="password" class="display--out">
+                <button class="display--copy">Copy</button>
+            </div>
+            <div class="pwGen--conditions">
+                <div class="conditions--wrapper">
+                    <label for="length">Password length (Min: 8  Max: 40)</label>
+                    <input type="number" name="length" id="length" min="8" max="40">
+                </div>
+                <div class="conditions--wrapper">
+                    <label for="cb cb1">Includes lower case letters</label>
+                    <input type="checkbox" name="lower" id="cb1">
+                </div>
+                <div class="conditions--wrapper">
+                    <label for="cb cb2">Includes upper case letters</label>
+                    <input type="checkbox" name="upper" id="cb2">
+                </div>
+                <div class="conditions--wrapper">
+                    <label for="cb cb3">Includes special characters</label>
+                    <input type="checkbox" name="special" id="cb3">
+                </div>
+                <div class="conditions--wrapper">
+                    <label for="cb cb4">Includes numbers</label>
+                    <input type="checkbox" name="numbers" id="cb4">
+                </div>
+            </div>
+            <div class="pwGen--btn">
+                <button class="btn--generate">Generate Password</button>
+                <p class="msg"></p>
+            </div>
+        </div>
+    </div>
+<script src="./p42_main.js"></script>
+</body>
+</html>
