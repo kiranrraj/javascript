@@ -17,13 +17,13 @@
                 <h2 class="heading--h2">Password Generator</h2>
             </div>
             <div class="pwGen--display">
-                <input type="text" name="display" value="password" class="display--out">
+                <input type="text" name="display" value="Password" class="display--out" readonly>
                 <button class="display--copy">Copy</button>
             </div>
             <div class="pwGen--conditions">
                 <div class="conditions--wrapper">
-                    <label for="length">Password length (Min: 8  Max: 40)</label>
-                    <input type="number" name="length" id="length" min="8" max="40">
+                    <label for="length">Password length (Max: 40)</label>
+                    <input type="number" name="length" id="length" max="40">
                 </div>
                 <div class="conditions--wrapper">
                     <label for="cb cb1">Includes lower case letters</label>
@@ -35,11 +35,11 @@
                 </div>
                 <div class="conditions--wrapper">
                     <label for="cb cb3">Includes special characters</label>
-                    <input type="checkbox" name="special" id="cb3">
+                    <input type="checkbox" name="symbol" id="cb3">
                 </div>
                 <div class="conditions--wrapper">
                     <label for="cb cb4">Includes numbers</label>
-                    <input type="checkbox" name="numbers" id="cb4">
+                    <input type="checkbox" name="number" id="cb4">
                 </div>
             </div>
             <div class="pwGen--btn">

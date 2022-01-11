@@ -54,12 +54,14 @@ body{
 .display--out{
     color: #003b49;
     background: #FFFFFF;
+    text-shadow: 1px 1px 1px #003b49;
     height: 30px;
     width: 250px;
     position: relative;
-    text-transform: uppercase;
     letter-spacing: 1.4px;
     padding: 2px 5px;
+    user-select: none;
+    outline: none;
 }
 
 .display--copy{
