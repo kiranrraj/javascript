@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Chat Box</title>
+</head>
+<body>
+    <div class="container">
+        <div class="chatbox--wrapper">
+            <h2 class="chatbox--heading">Chat Box</h2>
+            <form action="chat.html" class="chatbox--form">
+                <form-group>
+                    <label for="userName">Enter Your Name</label>
+                    <input type="text" id="userName" name="userName" placeholder="Enter Your Name">    
+                </form-group>
+                <form-group>
+                    <label for="message">Select Room</label>
+                    <select name="chatRoomName" id="chatRoomName" class="chatRoomName">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="react">React</option>
+                        <option value="python">Python</option>
+                    </select>   
+                </form-group>
+                <form-group>
+                    <button class="btn" type="submit">Submit</button>
+                </form-group>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

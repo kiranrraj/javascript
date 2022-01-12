@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Chat Box</title>
+</head>
+<body>
+    <div class="container">
+        <div class="chat--window">
+            <nav class="window--top">
+                <a href="#" class="top--heading">Chatter</a>
+                <button class="btn--leave">Leave Room</button>
+            </nav>
+            <div class="window--main">
+                <div class="window--left">
+                    <div class="rooms">
+                        <h3 class="rooms--heading">Room Name</h3>
+                        <h3 class="room--name">Name</h3>
+                    </div>
+                    <div class="users">
+                        <h3 class="users--heading">Users</h3>
+                        <ul class="user--list">
+                            <li class="user">kiran raj</li>
+                            <li class="user">vishnu</li>
+                            <li class="user">amitha</li>
+                        </ul>
+                    </div>
+                </div>
+                <main class="window--right">
+                </main>
+            </div>
+            <div class="window--bottom">
+                <form action="" class="bottom--form">
+                    <input type="text" class="form--msg" id="form--msg">
+                    <button class="form--btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.3/qs.min.js" integrity="sha512-6FWywaDsSTRJPvjmXNaTsAOT6gFyL2TGhHRWdovs4pc/jXAcuSCr9sCjebJo+L8tlxm0I+lIHJ8w7coa3yWeNw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
