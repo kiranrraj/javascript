@@ -89,8 +89,8 @@
     letter-spacing: 1.3px;
     line-height: 110%;
     color:#fff;
-    display: none;
 }
+
 
 .flashCard--btn{
     padding: 10px 25px;
@@ -106,11 +106,17 @@
     position: absolute;
     top: -2000px;
     left: 0;
-    background:#2948ff;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: top 300ms ease-in-out;
 }
+
+.flashCard__createShow{
+    top:0px;
+}
+
 
 .flashCard__create--close{
     position: absolute;
