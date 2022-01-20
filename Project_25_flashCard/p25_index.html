@@ -1,0 +1,58 @@
+<!-- 
+    Project:        Flash Card 
+    Author:         Kiran Raj R 
+    Last Update:    20/01/2022 
+    Technologies:   HTML, CSS, JavaScript 
+    Project Status: Completed 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/a7e9f794eb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./p25_style.css" />
+    <title>Notification Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="flash__header">
+        <nav class="flash__header--nav">
+          <h2 class="flash__header--heading">Flash Card</h2>
+          <button class="btn btn--create">Create Card</button>
+        </nav>
+      </header>
+      <main class="main">
+        <div class="flashCard">
+          <h3 class="flashCard--heading">Flash Card</h3>
+          <p class="flashCard--question"></p>
+          <p class="flashCard--answer"></p>
+          <button class="flashCard--btn">Show Answer</button>
+        </div>
+        <div class="flashCard__create">
+          
+          <div class="flashCard__create--wrapper">
+            <div class="flashCard__create--close"><i class="far fa-times-circle"></i></div>
+            <h3 class="flashCard__create--heading">Flash Card</h3>
+            <div class="flashCard__create--group">
+              <label for="textarea1">Enter Your Question</label>
+              <textarea class="flashCard__create--answer"
+              type="text" maxlength="250" id="textarea1" cols="50" rows="4"></textarea>
+            </div>
+            <div class="flashCard__create--group">
+              <label for="textarea2">Enter Your Question</label>
+              <textarea class="flashCard__create--answer"
+              type="text" maxlength="150" id="textarea2" cols="50" rows="4"></textarea>
+            </div>
+            
+            <button class="flashCard__create--btn">Save</button>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">Created with Javascript</footer>
+    </div>
+    <script src="./p25_main.js"></script>
+  </body>
+</html>
