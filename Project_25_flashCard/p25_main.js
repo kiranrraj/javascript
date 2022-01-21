@@ -1,98 +1,15 @@
 
-const container = document.querySelector('.container');
 const cardCreateBtn = document.querySelector('.btn--create');
 const createWindow = document.querySelector('.flashCard__create');
+
 const closeBtn = document.querySelector('.flashCard__create--close');
+
 const mainBlock = document.querySelector('.main');
-const saveBtn = document.querySelector('.flashCard__create--btn');
+
+const cardSaveBtn = document.querySelector('.flashCard__create--btn');
 const userQuestion = document.querySelector('.flashCard__create--question');
 const userAnswer = document.querySelector('.flashCard__create--answer');
 
-
-const checkInput = (userInput) => {
-    let data = userInput.trim();
-    if(data === "" || data === undefined) return -1
-    return data;
-}
-
-const createContent = (type, text, className, parentElem, style="block") => {
-    let content = document.createElement(type);
-    content.textContent = text;
-    content.classList.add(className);
-    parentElem.appendChild(content);
-    content.style.display = style;
-    return content;
-}
-
-const createCard = (userQus, userAns) => {
-    let flashCard = document.createElement('div');
-    flashCard.classList.add('flashCard');
-    createContent("h3", "Flash Card", "flashCard--heading", flashCard);
-    createContent("p", userQus, "flashCard--question", flashCard);
-    createContent("p", userAns, "flashCard--answer", flashCard, "none");
-
-    const showBtn = createContent("button", "Show Answer", "flashCard--btn", flashCard);
-    showBtn.onclick = function(e) {
-        let answer = flashCard.querySelector('.flashCard--answer');
-        console.log(answer);
-        answer.style.display === "none" ? answer.style.display = "block": 
-        answer.style.display = "none";
-    };
-
-    mainBlock.appendChild(flashCard);
-};
-
-
-const onClickingSaveBtn = () => {
-    let qus = checkInput(userQuestion.value);
-    let ans = checkInput(userAnswer.value);
-
-    if(qus !== -1 && ans !== -1){
-        insertDataIntoLocalStorage(qus, ans);
-        loadNowSavedCard();
-        createWindow.classList.remove('flashCard__createShow');
-    }else {
-        let notification = createContent('p', "Enter a valid input", 'notify', container);
-        setTimeout(()=>{
-            notification.remove();
-        }, 1500);
-    }
-    
-    userQuestion.value = "";
-    userAnswer.value = "";
-    
-}
-
-const insertDataIntoLocalStorage = (question, answer) => {
-    let obj = {
-        "question" : question,
-        "answer" : answer
-    };
-    qusAndAns.push(obj);
-    localStorage.setItem('flashCardArray', JSON.stringify(qusAndAns));
-}   
-
-const readDataFromLocalStorage = () => {
-    let objInLocalStorage = JSON.parse(localStorage.getItem('flashCardArray'));
-    for(let obj in objInLocalStorage){
-        let qusFromLocalStorage = objInLocalStorage[obj].question;
-        let ansFromLocalStorage = objInLocalStorage[obj].answer;
-        createCard(qusFromLocalStorage, ansFromLocalStorage);
-    }
-}
-
-const loadNowSavedCard = () => {
-    let objInLocalStorage = JSON.parse(localStorage.getItem('flashCardArray'));
-    let lastObject = objInLocalStorage[objInLocalStorage.length - 1];
-    let qusFromLocalStorage = lastObject.question;
-    let ansFromLocalStorage = lastObject.answer;
-    createCard(qusFromLocalStorage, ansFromLocalStorage);
-}
-
-loadNowSavedCard();
-
-let qusAndAns = localStorage.getItem('flashCardArray') ? 
-    JSON.parse(localStorage.getItem('flashCardArray')) : [];
 
 cardCreateBtn.addEventListener('click', ()=>{
     createWindow.classList.toggle('flashCard__createShow');
@@ -102,7 +19,80 @@ closeBtn.addEventListener('click', () => {
     createWindow.classList.remove('flashCard__createShow');
 });
 
-// Load Cards when the DOM is loaded.
-document.addEventListener('DOMContentLoaded', readDataFromLocalStorage);
+const createContent = (type, text, className, parentElem, style="block") => {
+    let content = document.createElement(type);
+    content.style.display = style;
+    content.textContent = text;
+    content.classList.add(className);
+    parentElem.appendChild(content);
+    return content;
+}
 
-saveBtn.addEventListener('click', onClickingSaveBtn);
+const createCard = (userQus, userAns) => {
+    let flashCard = document.createElement('div');
+    flashCard.classList.add('flashCard');
+
+    // let flashCardHeading = document.createElement('h3');
+    // flashCardHeading.textContent = "Flash Card";
+    // flashCardHeading.classList.add('flashCard--heading');
+    // flashCard.appendChild(flashCardHeading);
+    createContent("h3", "Flash Card", "flashCard--heading", flashCard);
+
+    // let flashCardQuestion = document.createElement('p');
+    // flashCardQuestion.innerText = userQus;
+    // flashCardQuestion.classList.add('flashCard--question');
+    // flashCard.appendChild(flashCardQuestion);
+    createContent("p", userQus, "flashCard--question", flashCard);
+
+    // let flashCardAnswer = document.createElement('p');
+    // flashCardAnswer.style.display = 'none';
+    // flashCardAnswer.innerText = userAns;
+    // flashCardAnswer.classList.add('flashCard--answer');
+    // flashCard.appendChild(flashCardAnswer);
+    createContent("p", userAns, "flashCard--answer", flashCard, "none");
+
+    // let flashCardBtn = document.createElement('button');
+    // flashCardBtn.innerText = "Show Answer";
+    // flashCardBtn.classList.add('flashCard--btn');
+    // flashCardBtn.onclick = function() {
+    //     let answer = document.querySelector('.flashCard--answer');
+    //     answer.style.display === "none" ? answer.style.display = "block": 
+    //     answer.style.display = "none";
+    // }
+    // flashCard.appendChild(flashCardBtn);
+
+    const showBtn = createContent("button", "Show Answer", "flashCard--btn", flashCard, "none");
+    showBtn.onclick = function() {
+        let answer = document.querySelector('.flashCard--answer');
+        answer.style.display === "none" ? answer.style.display = "block": 
+        answer.style.display = "none";
+    };
+
+    mainBlock.appendChild(flashCard);
+};
+
+cardSaveBtn.addEventListener('click', () => {
+    let qus = userQuestion.value;
+    let ans = userAnswer.value;
+    createWindow.classList.remove('flashCard__createShow');
+    createCard(qus, ans);
+});
+
+let qusAndAns = localStorage.getItem('qusAns_local') ? 
+                JSON.parse(localStorage.getItem('qusAns_local')) : [];
+
+const qusAndAnsObj = () => {
+    let obj = {
+        "question" : userQuestion.value,
+        "answer" : userAnswer.value
+    }
+}   
+
+qusAndAns.push(obj);
+localStorage.setItem('qusAns_local', JSON.stringify(qusAndAns));
+
+const deleteCards = () => {
+    localStorage.clear();
+    mainBlock.innerHTML = "";
+    qusAndAns = [];
+}
