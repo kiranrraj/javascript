@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to right top, #200122, #6f0000); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+.captchaGen{
+    width: 500px;
+    height: 300px;
+    padding: 30px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #fe8c00, #f83600);
+    box-shadow: 2px 2px 5px #200122;
+    border-radius: 5px;
+}
+
+.captchaGen--heading{
+    color: #fff;
+    text-shadow: 2px 2px 2px #200122;
+    letter-spacing: 3px;
+    margin: 10px 0;
+}
+
+.captchaGen--captcha,
+.captchaGen--validate{
+    height: 50px;
+    width: 100%;
+    background: transparent;
+    display: flex;
+}
+
+.captcha--text{
+    width: 85%;
+    background-image: url('./captcha--img.jpeg');
+    margin: 1px;
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    letter-spacing: 15px;
+    color: #777;
+    user-select: none;
+}
+
+.captcha--btn{
+    width: 15%;
+    font-size: 20px;
+    outline: none;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.captchaGen--validate{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #fff;
+}
+
+.validate--input{
+    width: 100%;
+    border: 2px solid #fff;
+    padding-left: 15px;
+    font-size: 30px;
+    letter-spacing: 15px;
+}
+
+.validate--btn{
+    background: transparent;
+    position: absolute;
+    align-self: center;
+    height: 35px;
+    right: 10px;
+    padding: 0 20px;
+    outline: none;
+    border: 2px solid #6f0000;
+    border-radius: 5px;
+    color: #6f0000;
+    letter-spacing: 1.4px;
+}
+
+.captchaGen--msg{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.captchaGen--msg p{
+    text-align: left;
+    text-shadow: 1px 1px 1px #fe8c00;
+}
