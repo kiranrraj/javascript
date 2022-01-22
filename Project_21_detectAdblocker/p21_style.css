@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to right, #b2fefa, #0ed2f7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.card{
+    width: 420px;
+    height: 280px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #000;
+    background: linear-gradient(to right bottom, #41295a, #2f0743);
+}
+
+.card--icon{
+    text-align: center;
+}
+
+.fa-exclamation-triangle{
+    
+    font-size: 60px;
+    color: #fff;
+    text-shadow: 1px 1px 5px #000;
+}
+
+.card--text{
+    padding: 0 10px;
+}
+
+.text--heading{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px #111;
+}
+
+.text--para{
+    color: #fff;
+    letter-spacing: 1.4px;
+    line-height: 130%;
+    font-size: 14px;
+}
+
+.card--btns{
+    margin: 20px 0;
+    padding: 0 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn{
+    outline: none;
+    border: none;
+    color: #fff;
+    padding: 5px 15px;
+    background: #000;
+    border: 1px solid #fff;
+    letter-spacing: 1.2px;
+}
+
+.btn:hover{
+    color: #000;
+    background: #fff;
+}
+
+.alert{
+    position: absolute;
+    right: 20px;
+    font-size: 17px;
+    bottom: 20px;
+    padding: 20px 40px;
+    background: #000;
+    letter-spacing: 1.5px;
+    box-shadow: 2px 2px 5px #777;
+    text-shadow: 1px 1px 1px #222;
+}
