@@ -11,6 +11,7 @@ a{
 }
 
 .container{
+    position: relative;
     font-family: 'Playfair Display', serif;
     width: 100%;
     min-height: 100vh;
@@ -96,4 +97,16 @@ a{
 
 .cookieRequest--policy i{
     padding: 0 5px;
+}
+
+.alert{
+    position: absolute;
+    right: 20px;
+    font-size: 17px;
+    bottom: 20px;
+    padding: 20px 40px;
+    background: #000;
+    letter-spacing: 1.5px;
+    box-shadow: 2px 2px 5px #777;
+    text-shadow: 1px 1px 1px #222;
 }
