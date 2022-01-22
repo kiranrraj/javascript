@@ -18,6 +18,7 @@ function getUserData(){
     } else{
         msg.textContent = "";
         createElement([]);
+        // API Key not provided
         url = `https://restcountries.eu/rest/v2/name/${Cname}`;
         getData();
     }

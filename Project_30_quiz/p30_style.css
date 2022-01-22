@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.logo{
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: 4px;
+    color: #fff;
+    text-shadow: 3px 3px 5px #111;
+}
+
+.container{
+    font-family: 'Playfair Display', serif;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(45deg, #08AEEA 0%, #2AF598 100%);
+}
+
+.header{
+    width: 100%;
+    height: 50px;
+}
+
+.nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 2px 6px #333;
+    background-image: linear-gradient(135deg, #2AF598 0%, #08AEEA 100%);
+}
+
+.questionIndex{
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: #fff;
+    text-shadow: 2px 2px 4px #666;
+}
+
+.quizCard{
+    width: 540px;
+    height: 320px;
+    background-image: linear-gradient(45deg, #FF9A8B 0%, #FF99AC 100%);
+    box-shadow: 2px 2px 6px #333;
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+
+.quizCard--heading{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 3px #333;
+    letter-spacing: 4px;
+    font-size: 22px;
+}
+
+.quizCard--question{
+    margin-bottom: 15px;
+    letter-spacing: 1.4px;
+    line-height: 130%;
+    text-shadow: 1px 1px 1px #333;
+    height: 70px;
+}
+
+.answer{
+    width: 100%;
+    padding: 2px 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-shadow: 1px 1px 1px #333;
+}
+
+.quizCard--answer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.ans {
+    margin-right: 15px;
+}
+
+.quizCard--btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.btn{
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    font-size: 25px;
+    background: #fff;
+}
+
+.btn--disabled{
+    background:#333;
+    color: #fff;
+}
+
+.footer{
+    height: 40px;
+    width: 100%;
+    color: #fff;
+    background: #000;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;
+    font-size: 13px;
+}

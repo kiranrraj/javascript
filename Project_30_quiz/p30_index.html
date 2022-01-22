@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <script src="https://kit.fontawesome.com/a7e9f794eb.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./p30_style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <a href="#" class="logo">Quiz</a>
+                <p class="questionIndex"></p>
+            </nav>
+        </header>
+        <main class="main">
+            <section class="quizCard">
+                <h3 class="quizCard--heading">Quiz Card</h3>
+                <p class="quizCard--question"></p>
+                <section class="quizCard--answer">
+                    <div class="answer">
+                        <input type="radio" name="answer" id="ans1" class="ans1 ans">
+                        <label for="ans1" class="label label1"></label>
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="answer" id="ans2" class="ans2 ans">
+                        <label for="ans2" class="label label2"></label>
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="answer" id="ans3" class="ans3 ans">
+                        <label for="ans3" class="label label3"></label>
+                    </div>
+                    <div class="answer">
+                        <input type="radio" name="answer" id="ans4" class="ans4 ans">
+                        <label for="ans4" class="label label4"></label>
+                    </div>
+                </section>
+                <div class="quizCard--btn">
+                    <button class="btn btn--prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="btn btn--next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer--para">Kiran Raj R&copy; 2022</p>
+        </footer>
+    </div>
+    <script src="./p30_main.js"></script>
+</body>
+</html>
