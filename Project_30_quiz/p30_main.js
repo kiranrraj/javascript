@@ -76,8 +76,9 @@ const qusAns = [
     }
 ];
 
-let currentQuestionCount = 0, correctAnswerArray = [];
+let currentQuestionCount = 0, correctAnswerCount = 0, correctAnswerArray=[];
 const questionPara = document.querySelector('.quizCard--question');
+const markIndex = document.querySelector('.mark');
 const labels = document.querySelectorAll('.label')
 const answersRadio = document.querySelectorAll('.ans')
 const questionIndex = document.querySelector('.questionIndex');
@@ -116,7 +117,11 @@ const resetRadio = (radioCount) => {
 }
 
 const updateQuestionNumber = (qusNum=0) => {
-    questionIndex.textContent = `${qusNum + 1} / ${qusAns.length}`;
+    questionIndex.textContent = `Questions: ${qusNum + 1} / ${qusAns.length}`;
+}
+
+const updateCorrectCount = (correct=0) => {
+    markIndex.textContent = `Mark: ${correct} / ${qusAns.length}`;
 }
 
 const createQuestion = (qusCount) => {
@@ -134,15 +139,15 @@ const updateAnswer = (qusCount) => {
 }
 
 const checkCorrectness = (array, index) => {
-
     let answersArray = array[index].answers;
     let correctAnswerIndex = array[index].correct - 1;
-
     for(let i = 0; i < answersRadio.length; i++){
         if(answersRadio[i].checked && answersRadio[i].value === answersArray[correctAnswerIndex]){
             correctAnswerArray.push(answersRadio[i].value);
         }
     }
+    correctAnswerCount = [...new Set(correctAnswerArray)].length;
+    updateCorrectCount(correctAnswerCount);
 }
 
 nextBtn.addEventListener('click', (e) => {
@@ -162,15 +167,18 @@ prevBtn.addEventListener('click', (e) => {
         btnStatus(currentQuestionCount, "btn--disabled");
         currentQuestionCount--;
     } else {
-        btnStatus(currentQuestionCount, "btn--disabled");
+        btnStatus(currentQuestionCount, "btn--disabled"); 
     }
     createQuestion(currentQuestionCount);
     updateQuestionNumber(currentQuestionCount);
 });
 
 const initialLoad = () => {
+    correctAnswerArray = [];
+    correctAnswerCount = 0;
     createQuestion(currentQuestionCount);
     updateQuestionNumber();
+    updateCorrectCount();
     btnStatus(currentQuestionCount, "btn--disabled");
 }
 
