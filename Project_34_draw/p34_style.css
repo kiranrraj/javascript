@@ -17,11 +17,85 @@
 
 .card{
     background-color: #00bbf9;
-    width: 480px;
-    height: 640px;
+    min-width: 320px;
+    max-width: 480px;
+    height: 480px;
+    max-height: 640px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items:center;
-    padding: 30px 50px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.card--heading{
+    width: 100%;
+    height: 80px;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    font-size: 30px;
+    letter-spacing: 3px;
+    color: #fff;
+    text-shadow: 1px 1px 3px #333;
+}
+
+.card--board{
+    height: 360px;
+    min-height: 280px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+
+.board--unit{
+    border: 1px solid #ffffff;
+    background: #333;
+}
+
+.card--color,
+.card--btn{
+    width: 100%;
+    height: 80px;
+    min-height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.card--color{
+    border-bottom: 2px solid #fff;
+}
+
+.palette{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+}
+
+.color{
+    padding: 0px 5px;
+}
+
+.label{
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #333;
+    letter-spacing: 1.2px;
+}
+
+.btn{
+    width: 80px;
+    height: 30px;
+    outline: none;
+    border: none;
+    box-shadow: 1px 1px 4px #333;
 }
