@@ -95,26 +95,3 @@
     align-items: center;
 }
 
-.person--image{
-    width: 50px;
-}
-
-.image{
-    border-radius: 50%;
-}
-
-.person--data{
-    width: calc(100% - 50px);
-    padding-left: 10px;
-}
-
-.data--name{
-    align-self: left;
-    font-size: 16px;
-    text-shadow: 1px 1px 1px #222;
-}
-
-.data--email{
-    font-size: 13px;
-    text-shadow: 1px 1px 1px #222;
-}
