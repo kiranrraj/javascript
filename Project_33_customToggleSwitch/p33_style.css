@@ -7,7 +7,6 @@
 .container{
     width: 100%;
     min-height: 100vh;
-    background-color: #2a9d8f;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -17,7 +16,9 @@
 .toogleSwitch{
     width: 200px;
     height: 150px;
-    background-color: #e76f51;
+    position: relative;
+    z-index: 10;
+    background-color: #111111;
     margin: 0 40px;
     box-shadow: 1px 1px 5px #222;
     border: 2px solid #fff;
@@ -30,22 +31,75 @@
 .toggleSwitch--wrapper{
     width: 120px;
     height: 40px;
-    background-color: #fca311;
-    border: 2px solid #fff;
+    background-color: #fff;
+    border: 3px solid #fff;
     border-radius: 30px;
     position: relative;
 }
 
+.ts1{
+    background-color: #06d6a0;
+}
+
+.ts2{
+    background-color: #118ab2;
+}
+
+.ts3{
+    background-color: #ff0054;
+}
+
+.ts4{
+    background-color: #ff5400;
+}
+
+.ts5{
+    background-color: #ffbd00;
+}
+
+.ts6{
+    background-color: #8338ec;
+}
+
 .toggleSwitch--label{
-    width: calc(40px - 4px);
-    height: calc(40px - 4px);
-    background-color: red;
+    width: calc(40px - 6px);
+    height: calc(40px - 6px);
     border-radius: 50%;
     position: absolute;
     left: 0;
-    box-shadow: 2px 0 4px #111;
+    box-shadow: 1px 0 4px #111;
+    transition: left 200ms ease;
+}
+
+.ts1 .toggleSwitch--label{
+    background-color: #06d6a0;
+}
+
+.ts2 .toggleSwitch--label{
+    background-color: #118ab2;
+}
+
+.ts3 .toggleSwitch--label{
+    background-color: #ff0054;
+}
+
+.ts4 .toggleSwitch--label{
+    background-color: #ff5400;
+}
+
+.ts5 .toggleSwitch--label{
+    background-color: #ffbd00;
+}
+
+.ts6 .toggleSwitch--label{
+    background-color: #8338ec;
 }
 
 .toggleSwitch--btn{
     display: none;
+}
+
+.btnChecked{
+    left: calc(100% - 34px);
+    box-shadow: -1px 0 4px #111;
 }
