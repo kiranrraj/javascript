@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-width: 320px;
+    height: 100vh;
+    min-height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.card{
+    background-color: #00bbf9;
+    width: 480px;
+    height: 640px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    padding: 30px 50px;
+}
