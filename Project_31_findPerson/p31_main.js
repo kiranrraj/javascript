@@ -71,14 +71,3 @@ const getUsers = async () => {
 getUsers();
 
 
-{/* <div class="list--person">
-<div class="person--image">
-<img src="" alt="" class="image">
-</div>
-<div class="person--data">
-<p class="data--name">kiran raj r</p>
-<p class="data--email">kiranrajvjd@gmail.com</p>
-</div>
-</div> */}
-
-
