@@ -78,6 +78,7 @@
 .palette{
     display: flex;
     justify-content: space-between;
+    padding: 0 10px;
     align-items: center;
     width: 100px;
 }
@@ -93,7 +94,7 @@
 }
 
 .btn{
-    width: 80px;
+    padding: 5px 20px;
     height: 30px;
     outline: none;
     border: none;
